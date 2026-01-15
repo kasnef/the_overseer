@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Light Mode Colors */
+    --bg-main: 248 250 245; /* #F8FAF5 */
+    --bg-surface: 255 255 255; /* #FFFFFF */
+    --text-primary: 26 28 26; /* #1A1C1A */
+    --text-secondary: 95 99 95; /* #5F635F */
+    --accent-primary: 16 185 129; /* #10B981 */
+    --accent-gradient-end: 5 150 105; /* #059669 */
+    --border-color: 226 232 226; /* #E2E8E2 */
+    --shadow-soft: 26 28 26; /* rgba(26, 28, 26, 0.06) */
+    --color-accent-glow: 16 185 129;
+    --color-shadow-deep: 0 0 0;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --bg-main: 18 20 18; /* #121412 */
+    --bg-surface: 30 32 30; /* #1E201E */
+    --text-primary: 236 240 236; /* #ECF0EC */
+    --text-secondary: 173 178 173; /* #ADB2AD */
+    --accent-primary: 16 185 129; /* #10B981 */
+    --border-color: 44 46 44; /* #2C2E2C */
+    --shadow-soft: 0 0 0;
+    --color-accent-glow: 16 185 129;
+    --color-shadow-deep: 0 0 0;
+  }
+}
+
+@theme {
+  /* Define custom colors mapped to CSS variables */
+  /* Using modern color syntax for Tailwind v4 */
+  --color-main: rgb(var(--bg-main));
+  --color-surface: rgb(var(--bg-surface));
+  --color-primary: rgb(var(--text-primary));
+  --color-secondary: rgb(var(--text-secondary));
+
+  --color-accent: rgb(var(--accent-primary));
+  --color-accent-end: rgb(var(--accent-gradient-end));
+  --color-accent-glow: rgb(var(--color-accent-glow) / 0.3);
+
+  --color-border: rgb(var(--border-color));
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px -2px rgb(var(--shadow-soft) / 0.06);
+  --shadow-deep: 0 8px 30px -4px rgb(var(--color-shadow-deep) / 0.4);
+  --shadow-glow: 0 0 15px rgb(var(--accent-primary) / 0.3);
+
+  /* Animations */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
